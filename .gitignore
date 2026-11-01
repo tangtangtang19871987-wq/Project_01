@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+.env
+.iltkb/
+build/
+dist/
+.DS_Store
+.pytest_cache/
+my-ilt-kb/
+SESSION_HANDOFF.md
