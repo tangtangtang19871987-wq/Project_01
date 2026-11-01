@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "iltkb"
+version = "0.1.0"
+description = "Evidence-grounded Markdown knowledge compiler for inverse lithography"
+requires-python = ">=3.11"
+dependencies = ["langchain-core>=1,<2", "langgraph>=1,<2"]
+
+[project.optional-dependencies]
+pdf = ["PyMuPDF>=1.24,<2"]
+gemini = ["langchain-google-genai>=4,<5"]
+ollama = ["langchain-ollama>=1,<2"]
+
+[project.scripts]
+iltkb = "iltkb.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["iltkb*"]
+
+[tool.setuptools.package-data]
+iltkb = ["web/*"]

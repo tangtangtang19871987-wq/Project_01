@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1321">
+  <meta name="description" content="ILT compiled knowledge: topics, evidence, sources, and coverage.">
+  <title>ILT Atlas · Knowledge Compiler</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/manage.js" defer></script>
+  <script src="/ontology.js" defer></script>
+  <script src="/engineer.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#/overview" aria-label="ILT Atlas home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span class="brand-copy"><strong>ILT Atlas</strong><small>KNOWLEDGE COMPILER</small></span>
+      </a>
+      <div class="workspace-label">Workspace <span class="workspace-dot"></span></div>
+      <nav class="nav-list" id="nav">
+        <a href="#/overview" data-nav="overview"><span class="nav-icon">◫</span> Overview</a>
+        <a href="#/topics" data-nav="topics"><span class="nav-icon">⌘</span> Topic map</a>
+        <a href="#/sources" data-nav="sources"><span class="nav-icon">▤</span> Source catalog</a>
+        <a href="#/coverage" data-nav="coverage"><span class="nav-icon">◷</span> Coverage and gaps</a>
+        <a href="#/semantics" data-nav="semantics"><span class="nav-icon">◇</span> Semantic graph</a>
+        <a href="#/manage" data-nav="manage" hidden><span class="nav-icon">⚙</span> System management</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-status"><span class="status-pulse"></span><span id="connection-label">Checking connection...</span></div>
+        <div class="sidebar-release" id="side-release">Loading release...</div>
+        <p>Pages show published text results only. Search does not call a model.</p>
+      </div>
+    </aside>
+
+    <div class="main-column">
+      <header class="topbar">
+        <div class="breadcrumbs" id="breadcrumbs">Knowledge compiler <span>/</span> Overview</div>
+        <div class="top-actions">
+          <button class="search-trigger" id="search-trigger" type="button" aria-label="Open search">
+            <span class="search-glyph">⌕</span><span>Search topics and evidence</span><kbd>/</kbd>
+          </button>
+          <span class="release-pill" id="release-pill"><span class="status-pulse"></span> Loading</span>
+          <button class="user-button" id="user-button" type="button" hidden></button>
+        </div>
+      </header>
+      <main id="main" tabindex="-1" aria-live="polite">
+        <div class="page-loading"><span class="loading-orbit"></span><p>Loading the knowledge release...</p></div>
+      </main>
+      <footer class="footer">ILT Atlas · Knowledge Compilation and Review <span>Compiled text requires domain validation</span></footer>
+    </div>
+  </div>
+
+  <div class="search-modal" id="search-modal" hidden>
+    <div class="search-backdrop" data-close-search></div>
+    <div class="search-panel" role="dialog" aria-modal="true" aria-labelledby="search-title">
+      <div class="search-field"><span class="search-glyph">⌕</span><label id="search-title" class="sr-only" for="search-input">Search the knowledge base</label><input id="search-input" type="search" placeholder="Search topics, terms, sources, or original evidence..." autocomplete="off"><button type="button" id="search-close" aria-label="Close search">Esc</button></div>
+      <div class="search-results" id="search-results"><div class="search-empty">Enter keywords to find published content</div></div>
+      <div class="search-hint">↑ ↓ Select <span>Enter Open</span><span>Esc Close</span></div>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
